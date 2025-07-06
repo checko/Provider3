@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sharedstorage">
+
+    <!--
+        Defines a custom permission that is required to access the ContentProvider.
+        The "signature" protection level means that only applications signed with the
+        same certificate as this provider app (i.e., the platform key in an AOSP build)
+        can be granted this permission.
+    -->
+    <permission
+        android:name="com.example.permission.ACCESS_SHARED_STORAGE"
+        android:protectionLevel="signature" />
+
+    <application
+        android:label="SharedStorageProvider">
+
+        <!--
+            Declares the ContentProvider.
+            - android:authorities is the unique name the system uses to identify this provider.
+            - android:exported="true" allows other apps to find and interact with it.
+            - The read and write permissions ensure that only apps granted our custom
+              permission can access the provider's data.
+        -->
+        <provider
+            android:name=".FileContentProvider"
+            android:authorities="com.example.sharedstorage.provider"
+            android:exported="true"
+            android:readPermission="com.example.permission.ACCESS_SHARED_STORAGE"
+            android:writePermission="com.example.permission.ACCESS_SHARED_STORAGE" />
+
+    </application>
+</manifest>

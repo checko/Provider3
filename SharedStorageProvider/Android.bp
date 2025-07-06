@@ -1,0 +1,33 @@
+// Android.bp for the SharedStorageProvider
+
+android_app {
+    name: "SharedStorageProvider",
+
+    // Statically link all required libraries.
+    static_libs: [
+        "androidx.core_core",
+    ],
+
+    // Point to the source code for the provider.
+    srcs: ["src/**/*.java"],
+
+    // The package name defined in the manifest.
+    package_name: "com.example.sharedstorage",
+
+    // Use the platform certificate. This is crucial for the "signature" permission level to work correctly
+    // with other platform apps.
+    certificate: "platform",
+
+    // The SDK version to compile against.
+    sdk_version: "current",
+
+    // Optimize for size and performance, as this is a background component.
+    optimize: {
+        enabled: true,
+    },
+
+    // Mark this as a non-user-facing app.
+    privileged: true,
+    product_specific: true,
+
+}

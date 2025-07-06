@@ -1,0 +1,13 @@
+android_app {
+    name: "ClientAppA",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    package_name: "com.example.clientappa",
+    sdk_version: "current",
+    certificate: "platform",
+    product_specific: true,
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "androidx.core_core",
+    ],
+}

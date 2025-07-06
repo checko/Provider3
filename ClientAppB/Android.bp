@@ -1,0 +1,9 @@
+android_app {
+    name: "ClientAppB",
+    srcs: ["src/**/*.java"],
+    resource_dirs: ["res"],
+    package_name: "com.example.clientappb",
+    sdk_version: "current",
+    certificate: "platform",
+    product_specific: true,
+}
