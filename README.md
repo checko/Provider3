@@ -53,4 +53,4 @@ This project was created with the assistance of gemini-cli.
 
 ## License
 
-This project is open-source and available under the Apache 2.0 License. See the `LICENSE` file for more details.
+This project is open-source and available under the Apache 2.0 License.
